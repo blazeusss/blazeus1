@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+        background-image: url("img/bg1.jpg");
+      background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background: linear-gradient(to top,white 88%,red 88%);
+    width: 800px;
+    height: 680px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 25px #e71e1e;
+    text-align: center;
+}
+
+  .container h1 {
+    font-size: 30px;
+    font-family:'Gill Sans', sans-serif;
+    margin-bottom: 20px;
+    position: absolute;
+    top:40px;
+    right: 660px;
+    color: #ffffff;
+  }
+
+  .FullName {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    position: absolute;
+    top: 170px;
+    right: 800px;
+}
+
+.FullName input {
+    width: 240px;
+    height: 50px; 
+    padding: 0 10px; 
+    border-radius: 10px;
+    border: 2px solid rgb(187, 16, 16);
+}
+
+.Information {
+  display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    position: absolute;
+    top: 170px;
+    right: 460px;
+
+}
+.Information input {
+  width: 240px;
+  height: 50px; 
+  padding: 0 10px; 
+  border-radius: 10px;
+  border: 2px solid rgb(187, 16, 16);
+}
+
+
+.SubmitButton {
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  background-color: #ff0000;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  top: 440px;
+  position: absolute;
+  right: 600px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: transform 0.3s ease-in-out; 
+    }
+    
+  .SubmitButton:hover {
+    transform: translate( -1px) scale(1.1); 
+  }
+    
+  .SubmitButton:active {
+  transform: scale(0.95);
+  }
+    
+  .SubmitButton:focus {
+  outline: none;
+  }
+
+.Info{
+    display: flex;
+    flex-direction:row; 
+    gap: 150px; 
+    position: relative;
+    top: 86px;
+    left:100px;
+}
+.Info h3{
+  font-family:'Gill Sans', sans-serif;
+}
+
+
+.s {
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  background-color: #ff0000;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  height: 50px;
+  top: 630px;
+  position: absolute;
+  right: 665px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: transform 0.3s ease-in-out; 
+    }
+    
+  .s:hover {
+    transform: translate( -1px) scale(1.1); 
+  }
+    
+  .s:active {
+  transform: scale(0.95);
+  }
+    
+  .s:focus {
+  outline: none;
+  }
+
+
+  .backbut{
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    background-color: #ff0000;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    height: 40px;
+    top: 40px;
+    position: absolute;
+    right: 1000px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out; 
+      }
+      
+      .backbut:hover {
+      transform: translate( -1px) scale(1.1); 
+    }
+      
+    .backbut:active {
+    transform: scale(0.95);
+    }
+      
+    .backbut:focus {
+    outline: none;
+    }
+  
+    .captcha-container {
+      margin-top: 10px;
+      padding: 15px;
+      height: 40px;
+      right: 550px;
+      width: 150px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      position: absolute;
+      top:480px;
+      border: 1px solid #ff0000;
+      text-align: left;
+  }
+  
+  .captcha-container label {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+      display: block;
+  }
+  
+  .captcha-container input {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+      padding: 10px;
+      top: 30px;
+      border: 1px solid #ff0000;
+      border-radius: 5px;
+  }
+  
+  .captcha-container input:focus {
+      border-color: #fc0000;
+      outline: none;
+  }
+.profile-upload {
+    position: absolute; /* or 'relative' or 'fixed', depending on your layout */
+    margin-top: 100px;
+    left: 470px;      /* distance from the left */
+    /* You can also use right or bottom if needed */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile-upload label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-upload input[type="file"] {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.profile-upload input[type="file"]:hover {
+    border-color: #db0606;
+}
+
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .success-message {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      color: #333;
+    }
+
+    .success-message svg {
+      margin-bottom: 20px;
+      width: 60px;
+      height: 60px;
+      fill: #27ae60;
+    }
+
+    .success-message p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }

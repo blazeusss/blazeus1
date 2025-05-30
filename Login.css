@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+      
+    body {
+    background-image: url("img/bg1.jpg");
+      background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+      }
+      
+    .container {
+    background: linear-gradient(to right, red 40%, white 40%);
+    width: 800px;
+    height: 470px;
+    position: absolute;
+    right: 350px;
+    top: 130px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 25px #e71e1e;
+    text-align: center;
+    }
+    
+      .container h1 {
+    font-size: 30px;
+    font-family:'Gill Sans', sans-serif;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 70px;
+    right: 160px;
+    }
+    
+    .inputBox1 input{
+    display: flex;
+    width: 200px;
+    height: 10px;
+    position: absolute;
+    top: 170px;
+    padding: 23px;
+    border-radius: 10px;
+    right: 120px;
+    border: 2px solid rgb(187, 16, 16);
+    }
+      
+    .inputBox2 input{
+    display: flex;
+    width: 200px;
+    height: 10px;
+    position: absolute;
+    top:240px;
+    padding: 23px;
+    border-radius: 10px;
+    right: 120px;
+    border: 2px solid rgb(187, 16, 16);
+    }
+      
+    .submitbutton {
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    background-color: #ff0000;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    top: 325px;
+    position: absolute;
+    right: 140px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out; 
+    }
+          
+    .submitbutton:hover {
+    transform: translate( -1px) scale(1.1); 
+    }
+          
+    .submitbutton:active {
+    transform: scale(0.95);
+    }
+    
+    .submitbuttont1.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+    }
+    
+    .Forgotpass{
+    text-decoration: none;
+    position: absolute;
+    top: 520px;
+    right: 485px;
+    }
+    
+    .Forgotpass p {
+    color:gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    }
+    .inputBox1 i {
+    position: absolute;
+    font-size: 23px;
+    top: 185px;
+    right: 335px
+    }
+    
+    .inputBox2 i {
+    position: absolute;
+    font-size: 23px;
+    top: 250px;
+    right: 335px
+    }
+    
+    
+    
+    .button2 {
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    background-color: #ff0000;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    top: 340px;
+    position: absolute;
+    right: 890px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out; 
+      }
+      
+    .button2:hover {
+      transform: translate( -1px) scale(1.1); 
+    }
+      
+    .button2:active {
+    transform: scale(0.95);
+    }
+      
+    .button2:focus {
+    outline: none;
+    }
+      
+    .SignupBut h2 {
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #FFFFFF;
+    left:470px;
+    top: 210px;
+    }
+    
+    .SignupBut p{
+    color: #FFFFFF;
+    top: -60px;
+    font-size: 15px;
+    left: -220px;
+    position:relative;
+    margin-bottom: 5px;
+    }
+    
+    
+    .inputBox1 input :focus,
+    .inputBox2 input  :focus{   
+    border-color: rgb(187, 16, 16);
+    }
+    
+    .estb{
+    color: #FFFFFF;
+    top: 500px;
+    font-size: 13px;
+    right: 960px;
+    position: absolute;
+    margin-bottom: 10px;
+    }

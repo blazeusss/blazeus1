@@ -1,0 +1,223 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html,
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: white;
+    height: 90vh;
+}
+.main 
+{
+    height: 91vh;
+    width: 100%;
+    background: linear-gradient(#df0909, #131010);
+}
+
+.navigation {
+    height: 110px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+.nav-10
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.navigation img
+{
+    height: 150px;
+    width: auto;
+    margin-right: 60px;
+    cursor: pointer;
+
+}
+.nav-10 ul{
+     display: flex ;
+     align-items: center;
+     justify-content: center;
+     list-style: none;
+
+}
+.nav-10 ul li{
+    margin-right: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+   
+}
+.nav-10 a {
+    color: white
+}
+.nav-10 a:hover {
+    color: #FFF0DC ;
+}
+.nav-20 {
+    margin-right: 40px;
+    font-size: 21px;
+    font-weight: 500;
+    cursor: pointer;
+    right: 50px;
+    position: fixed;
+    top: 41px;
+}
+
+  
+
+
+
+footer {
+    background-color: #131010;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-content ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-content ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.container1 {
+      width: 1000px;
+      height: 540px;
+      margin: 50px auto;
+      padding: 30px;
+      right: 240px;
+      top: 60px;
+      position: absolute;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      color: #000;
+
+    }
+
+.about-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #df0909;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.about-title::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: #df0909;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.about-paragraph {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: justify;
+    text-indent: 50px; /* essay-style first line indent */
+}
+
+.highlight {
+  color: #df0909;
+  font-weight: 600;
+}
+
+
+.modal {
+  display: none; /* Keep hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+  .modal-content {
+  background: white;
+  padding: 20px;
+  color: black;
+  font-weight: 350;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 8px;
+  min-width: 300px;
+
+  /* Add animation */
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInModal 0.9s ease forwards;
+}
+
+  
+  .buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #confirmLogout {
+    background-color: red;
+    color: white;
+  }
+  
+  #cancelLogout {
+    background-color: gray;
+    color: white;
+  }
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  
+  .a1{
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  }
+
+  .logoad{
+    position: relative;
+    top: 1px;
+  }

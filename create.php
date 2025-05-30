@@ -1,0 +1,200 @@
+<?php
+$showSuccessModal = isset($_GET['success']) && $_GET['success'] == '1';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="create.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <title>Create Account</title>
+  <style>
+    .captcha-container {
+      margin-bottom: 15px;
+    }
+    .profile-upload {
+      position: absolute;
+      top: 390px;
+      right: 455px;
+      color: #fff;
+      font-family: 'Gill Sans', sans-serif;
+    }
+    .profile-upload input[type="file"] {
+      margin-top: 10px;
+      color: #333;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ff0000;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .success-message {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      color: #333;
+    }
+    .success-message svg {
+      fill: green;
+      width: 40px;
+      height: 40px;
+    }
+    .success-message p {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+    .success-message button {
+      padding: 10px 20px;
+      border: none;
+      background: green;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form id="signupForm" action="signup.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <div class="container">
+      <h1>Create Account</h1>
+
+      <div class="FullName">
+        <input type="text" placeholder="Name" name="Name" required autocomplete="off" />
+        <input type="text" placeholder="Middle Name" name="MiddleName" required autocomplete="off" />
+        <input type="text" placeholder="Surname" name="Surname" required autocomplete="off" />
+        <input type="number" placeholder="Age" name="Age" min="12" autocomplete="off" required />
+      </div>
+
+      <div class="Info">
+        <h3>Personal Information</h3>
+        <h3>Account Information</h3>
+      </div>
+
+      <div class="Information">
+        <input type="text" placeholder="Username" name="Username" required autocomplete="off" />
+        <input type="password" placeholder="Password" name="Password" id="Password" required autocomplete="off" />
+        <input type="tel" placeholder="Phone number" name="PNum" maxlength="11" required autocomplete="off" />
+        <input type="email" placeholder="Email" name="Email" required class="a1" autocomplete="off" />
+      </div>
+
+      <div class="profile-upload">
+        <label for="profilePhoto">Upload Profile Photo:</label>
+        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" required />
+      </div>
+
+      <div class="captcha-container">
+        <label id="captcha-question"></label>
+        <input type="number" id="captcha-answer" placeholder="Answer" required />
+      </div>
+
+      <div>
+        <button class="s" type="submit">Submit</button>
+      </div>
+
+      <div>
+        <a href="login.php"><button class="backbut" type="button">Back</button></a>
+      </div>
+    </div>
+  </form>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="success-message">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.71l-1.41-1.41z" />
+      </svg>
+      <p>Success! Account Created Successfully!</p>
+      <button onclick="document.getElementById('successModal').style.display='none'">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      const correctAnswer = num1 + num2;
+
+      document.getElementById("captcha-question").textContent = `What is ${num1} + ${num2}?`;
+      document.getElementById("signupForm").dataset.correctAnswer = correctAnswer;
+    }
+
+    function validateCaptcha() {
+      const userAnswer = parseInt(document.getElementById("captcha-answer").value);
+      const correctAnswer = parseInt(document.getElementById("signupForm").dataset.correctAnswer);
+
+      if (userAnswer !== correctAnswer) {
+        alert("Incorrect CAPTCHA answer, please try again.");
+        generateCaptcha();
+        return false;
+      }
+      return true;
+    }
+
+    function validatePassword() {
+      const password = document.querySelector('input[name="Password"]').value;
+      const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+      if (!specialCharRegex.test(password)) {
+        alert("Password must contain at least one special character (e.g. !, @, #, etc).");
+        return false;
+      }
+      return true;
+    }
+
+    function validateAge() {
+      const age = parseInt(document.querySelector('input[name="Age"]').value);
+      if (age < 12 || age > 99) {
+        alert("Age must be between 12 and 99.");
+        return false;
+      }
+      return true;
+    }
+
+    function validatePhoneNumber() {
+      const phone = document.querySelector('input[name="PNum"]').value;
+      const phoneRegex = /^09\d{9}$/;
+      if (!phoneRegex.test(phone)) {
+        alert("Phone number must start with 09 and be exactly 11 digits.");
+        return false;
+      }
+      return true;
+    }
+
+    function validateEmail() {
+      const email = document.querySelector('input[name="Email"]').value;
+      const allowedDomains = ["@gmail.com", "@yahoo.com"];
+      if (!allowedDomains.some(domain => email.endsWith(domain))) {
+        alert("Email must end with @gmail.com or @yahoo.com.");
+        return false;
+      }
+      return true;
+    }
+
+    function validateForm() {
+      return validateCaptcha() &&
+             validatePassword() &&
+             validateAge() &&
+             validatePhoneNumber() &&
+             validateEmail();
+    }
+
+    window.onload = function () {
+      generateCaptcha();
+      <?php if ($showSuccessModal): ?>
+        document.getElementById("successModal").style.display = "flex";
+      <?php endif; ?>
+    };
+  </script>
+</body>
+</html>

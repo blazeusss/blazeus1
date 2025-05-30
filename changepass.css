@@ -1,0 +1,295 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+        background-image: url("img/bg1.jpg");
+      background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background: linear-gradient(to top,white 85%,red 85%);
+    width: 800px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 25px #e71e1e;
+    text-align: center;
+}
+
+  .container h1 {
+    font-size: 25px;
+    font-family:'Gill Sans', sans-serif;
+    margin-bottom: 20px;
+    position: absolute;
+    top:125px;
+    right: 660px;
+    color: #ffffff;
+  }
+
+  .inputBox1 input{
+    display: flex;
+    width: 300px;
+    height: 10px;
+    position: absolute;
+    top: 210px;
+    padding: 23px;
+    border-radius: 10px;
+    right: 610px;
+    border: 2px solid rgb(187, 16, 16);
+    }
+      
+    .inputBox2 input{
+    display: flex;
+    width: 300px;
+    height: 10px;
+    position: absolute;
+    top:283px;
+    padding: 23px;
+    border-radius: 10px;
+    right: 610px;
+    border: 2px solid rgb(187, 16, 16);
+    }
+    
+    .inputBox3 input{
+        display: flex;
+        width: 300px;
+        height: 10px;
+        position: absolute;
+        top:354px;
+        padding: 23px;
+        border-radius: 10px;
+        right: 610px;
+        border: 2px solid rgb(187, 16, 16);
+        }
+
+        .inputBox4 input{
+          display: flex;
+          width: 300px;
+          height: 10px;
+          position: absolute;
+          top:425px;
+          padding: 23px;
+          border-radius: 10px;
+          right: 610px;
+          border: 2px solid rgb(187, 16, 16);
+          }
+
+          .inputBox5 input{
+          display: flex;
+          width: 300px;
+          height: 10px;
+          position: absolute;
+          top:505px;
+          padding: 23px;
+          border-radius: 10px;
+          right: 610px;
+          border: 2px solid rgb(187, 16, 16);
+          }
+      
+    .but1 {
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    background-color: #ff0000;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    top: 500px;
+    width: 150px;
+    position: absolute;
+    right: 680px;
+    height: 35px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out; 
+    }
+          
+    .but1:hover {
+    transform: translate( -1px) scale(1.1); 
+    }
+          
+    .but1:active {
+    transform: scale(0.95);
+    }
+    
+    .but1.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+    }
+
+ 
+    .but2 {
+      border-radius: 20px;
+      border: 1px solid #ffffff;
+      background-color: #ff0000;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 12px 45px;
+      top: 115px;
+      position: absolute;
+      right: 1000px;
+      height: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: transform 0.3s ease-in-out; 
+      }
+            
+      .but2:hover {
+      transform: translate( -1px) scale(1.1); 
+      }
+            
+      .but2:active {
+      transform: scale(0.95);
+      }
+      
+      .but2.ghost {
+      background-color: transparent;
+      border-color: #FFFFFF;
+      }
+  .p1{
+    font-size: 15px;
+    position: relative;
+    font-family:'Gill Sans', sans-serif;
+    top: 100px;
+    left: -215px;
+    margin-bottom: 50px;
+
+  }
+
+  .p2{
+    font-size: 15px;
+    position: relative;
+    font-family:'Gill Sans', sans-serif;
+    top: 100px;
+    left: -215px;
+    margin-bottom: 50px; 
+  }
+
+  .p3{
+    font-size: 15px;
+    position: relative;
+    font-family:'Gill Sans', sans-serif;
+    top: 105px;
+    left: -215px;
+    margin-bottom: 50px; 
+  }
+
+  .p4{
+    font-size: 15px;
+    position: relative;
+    font-family:'Gill Sans', sans-serif;
+    top: 115px;
+    left: -220px;
+    margin-bottom: 50px; 
+  }
+
+    .p5{
+    font-size: 15px;
+    position: relative;
+    font-family:'Gill Sans', sans-serif;
+    top: 125px;
+    left: -230px;
+    margin-bottom: 50px; 
+  }
+  .showPasswordToggle {
+    margin-top: 10px;
+}
+
+#passwordToggle {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    top: 435px;
+    right: 460px;
+    position: absolute;
+
+    border: none;
+    font-size: 14px;
+}
+
+#passwordToggle:hover {
+    background-color: #e60000;
+}
+
+#passwordToggle:active{
+  background-color: gray;
+}
+
+
+  /* Modal styles */
+
+    #successModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: none; /* hidden initially */
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    #successModal.fade-out {
+      opacity: 0;
+    }
+
+    .success-message {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      border: 2px solid #ff0000;
+      box-shadow: 0 0 25px #e71e1e;
+      text-align: center;
+      width: 320px;
+      font-family: 'Gill Sans', sans-serif;
+      color: #e71e1e;
+      position: relative;
+    }
+
+    .success-message svg {
+      width: 48px;
+      height: 48px;
+      fill: #e71e1e;
+      margin-bottom: 15px;
+    }
+
+    .success-message p {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .success-message .close-x {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #e71e1e;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+
+    .success-message .close-x:hover {
+      color: #a50000;
+    }

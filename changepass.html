@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="changepass.css" />
+  <link rel="icon" type="image/png" href="img/logo.png">
+<title>Change Password</title>
+<style>
+  /* Include modal styles aligned with your existing CSS */
+  #successModal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  .success-message {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 25px #e71e1e;
+    text-align: center;
+    width: 320px;
+    font-family: 'Gill Sans', sans-serif;
+    color: #e71e1e;
+    position: relative;
+  }
+  .success-message svg {
+    width: 48px;
+    height: 48px;
+    fill: #e71e1e;
+    margin-bottom: 15px;
+  }
+  .success-message p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .success-message .close-x {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #e71e1e;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+  }
+  .success-message .close-x:hover {
+    color: #a50000;
+  }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const successModal = document.getElementById("successModal");
+  const closeX = document.querySelector(".close-x");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const requiredFields = ["Username", "Password", "Email", "NewPassword"];
+    let valid = true;
+    requiredFields.forEach(name => {
+      const input = form.querySelector(`[name="${name}"]`);
+      if (!input.value.trim()) {
+        input.style.borderColor = "red";
+        valid = false;
+      } else {
+        input.style.borderColor = "#ccc";
+      }
+    });
+    if (!valid) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Processing...";
+
+    const formData = new FormData(form);
+    try {
+      const response = await fetch("changepass.php", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        successModal.style.display = "flex";
+      } else {
+        alert(data.message);
+        form.querySelector('[name="Password"]').value = "";
+        form.querySelector('[name="NewPassword"]').value = "";
+      }
+    } catch (error) {
+      alert("An error occurred, please try again.");
+      console.error(error);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+    }
+  });
+
+  closeX.addEventListener("click", () => {
+    successModal.style.opacity = "0";
+    setTimeout(() => {
+      successModal.style.display = "none";
+      window.location.href = "login.php";
+    }, 500);
+  });
+
+  window.togglePassword = function () {
+    var passwordField = document.getElementById('password');
+    var newPasswordField = document.getElementById('newPassword');
+    var passwordToggle = document.getElementById('passwordToggle');
+
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+      newPasswordField.type = "text";
+      passwordToggle.textContent = "Hide Password";
+    } else {
+      passwordField.type = "password";
+      newPasswordField.type = "password";
+      passwordToggle.textContent = "Show Password";
+    }
+  };
+});
+</script>
+</head>
+<body>
+<form action="changepass.php" method="POST">
+  <div class="container">
+    <h1>Change Password</h1>
+    <div class="inputBox1">
+      <input type="text" name="Username" placeholder="Username" required autocomplete="off" />
+    </div>
+    <div class="inputBox2">
+      <input type="password" name="Password" id="password" placeholder="Password" required autocomplete="off" />
+    </div>
+    <div class="inputBox3">
+      <input type="email" name="Email" placeholder="Email" required autocomplete="off" />
+    </div>
+    <div class="inputBox4">
+      <input type="password" name="NewPassword" id="newPassword" placeholder="New Password" required maxlength="16" minlength="8" />
+    </div>
+
+    <div class="inputText">
+      <p class="p1">Username</p>
+      <p class="p2">Password</p>
+      <p class="p3">Email</p>
+      <p class="p4">New Password</p>
+    </div>
+
+    <div class="showPasswordToggle">
+      <button type="button" id="passwordToggle" onclick="togglePassword()">Show Password</button>
+    </div>
+
+    <div>
+      <a href="login.php">
+        <button class="but2" type="button">Back</button>
+      </a>
+    </div>
+
+    <div>
+      <button class="but1" type="submit">Submit</button>
+    </div>
+  </div>
+</form>
+
+<div id="successModal" class="modal">
+  <div class="success-message">
+    <span class="close-x">&times;</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.3 7.71l-1.41-1.41z" />
+    </svg>
+    <p>Success! Your password was changed successfully!</p>
+  </div>
+</div>
+</body>
+</html>

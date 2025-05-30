@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RM Home Finds - Admin</title>
+  <link rel="stylesheet" href="admincontrol.css" />
+      <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+  <div class="main">
+    <img src="img/cartoon-icon-generator_msg-06-modified.png" alt="Admin Logo" class="adminlogo" id="adminLogo" />
+
+    <button class="admin-btn" id="enterAdminBtn" onclick="showAdminOptions()">Enter Admin</button>
+
+    <button class="logout-btn" id="logoutBtn" onclick="logout()" style="display: none;">Logout</button>
+
+    <div class="admin-options" id="adminOptions">
+      <div class="admin-block">
+        <img src="img/cartoon-icon-generator_msg-TQ-modified.png" alt="User List" />
+        <a href="admin.php"><button>User List</button></a>
+      </div>
+      <div class="admin-block">
+        <img src="img/cartoon-icon-generator_msg-wQ-modified.png" alt="Email Management" />
+        <a href="orderlist.php"><button>Order Management</button></a>
+
+
+
+      </div>
+      <div class="admin-block">
+        <img src="img/cartoon-icon-generator_msg-5w-modified.png" alt="Email Management" />
+        <a href="emaillist.php"><button>Email Management</button></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <p>Do you want to logout?</p>
+      <div class="buttons">
+        <a href="logout.php"><button id="confirmLogout">Confirm</button></a>
+        <button id="cancelLogout">No</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 RM Home Finds. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="admincontrol.js"></script>
+</body>
+</html>
